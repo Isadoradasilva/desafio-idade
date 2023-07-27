@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function idade() {
+            var res;
+            var idade = parseInt(document.getElementById("idade").value);
+            var nome = document.getElementById("nome").value;
+            // console.log(nome);
+            // console.log(idade);
+
+            if (idade<0) {
+                res = "(DIGITE UMA IDADE VÁLIDA)";
+            } else if (idade <= 11) {
+                res = "criança";
+            } else if (idade <= 20) {
+                res = "adolescente";
+            } else if (idade < 65) {
+                res = "adulto";
+            } else if (idade < 110) {
+                res = "idoso";
+            } else if (idade < 10 ** 200) {
+                res = "Matusalém?";
+            } else {
+                res = "?"
+            }
+            document.getElementById("res").innerHTML = nome + " é " + res;
+        }
+    </script>
+
+    <style>
+        * {
+            margin: 0px auto;
+            padding: 0px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-style: oblique;
+            font-size: 18px;
+            border: 1px solid transparent;
+            width: 80%;
+        }
+
+        main {
+            border: 1px dashed #DB7093;
+            margin: 8px auto;
+            padding: 8px;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            align-items: center;
+            /* width: 80%; */
+            min-width: 30%;
+            background-color: #DB7093;
+        }
+
+        header {
+            margin: 8px auto;
+            padding: 8px;
+            border: 1px dotted #DB7093;
+            text-align: center;
+            align-items: center;
+            background-color: #FFB6C1;
+        }
+
+        footer {
+            margin: 64px auto;
+            background-color: #FFB6C1;
+            border: 1px solid #FFB6C1
+        }
+
+        button {
+            width: 50%;
+            height: 32px;
+            border-radius: 30px;
+        }
+
+        .row {
+            display: flex;
+            flex-direction: row;
+            margin: 5px auto;
+        }
+
+        label {
+            margin-right: 10px;
+        }
+
+        input {
+            border: 2px solid #ff00002d;
+        }
+    </style>
+</head>
+
+<body>
+    <header>        
+        <h1 style="font-size: 48px;">"Fases da vida"</h1>    
+    </header>
+    <main>
+        <div>
+
+            <div class="row">
+                <label for="nome">Nome: </label>
+                <input size="20" onkeyup="idade()" id="nome" type="text" placeholder="Digite o nome da pessoa" value="Pessoa" />
+            </div>
+            <div class="row">
+                <label for="idade">Idade: </label>
+                <input size="20" onkeyup="idade()" id="idade" type="number" placeholder="Digite a idade da pessoa" value="22" />
+            </div>
+            <!-- <div class="row">
+                <label for="dtnasc">Data de Nascimento: </label>
+                <input size="20" onkeyup="idade()" id="dtnasc" type="date" placeholder="Digite a idade da pessoa" value="22" />
+            </div> -->
+        </div>
+        <!-- <button onclick="idade()">Enviar</button> -->
+        <p id="res"></p>
+    </main>
+    
+</body>
+
+</html>
