@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<head>
+
+  <link rel="stylesheet" href="Untitled-1.css"
+
+</head>
+
+<body>
+
+    <div class="Idade">
+
+
+
+        <div class="subtitulo6">
+            <p> Fases da Vida Humana </p>
+        </div>
+   
+   
+        <div class="custo">
+            <input type="number" placeholder="Idade" id="idade">
+        </div>
+   
+   
+        <div class="Nome">
+            <input type="text" placeholder="Nome" id="Nome">
+        </div>
+   
+   
+        <div class="btn">
+            <button type="button" class="btn6" onclick="Calcular6()">Calcular</button>
+        </div>
+   
+   
+        <script>
+
+        
+
+            function Calcular6(event) 
+   
+   
+                event.preventDefault();
+                var idade = document.getElementById("idade").value;
+   
+   
+                if (idade < 11) {
+                    resultado4.innerHTML = "<br/> Seu resultado foi: " + idade.toFixed(2) + "<br/> Criança";
+                }
+
+                if (idade < 20) {
+        resultado.innerHTML = "<br/> Seu resultado foi: " + idade.toFixed(2) + "<br/> Adolescente";
+
+    } else if (idade < 65 ) {
+        resultado.innerHTML = "<br/> Seu resultado foi: " + idade.toFixed(2) + "<br/> Adulto";
+
+    } else if (idade > 65) {
+        resultado.innerHTML = "<br/> Seu resultado foi: " + idade.toFixed(2) + "<br/> Idoso";
+
+
+    }
+   
+   
+            document.getElementById("idade").placeholder = idade;
+            
+   
+   
+        </script>
+   
+   
+    </div>
+</body>
